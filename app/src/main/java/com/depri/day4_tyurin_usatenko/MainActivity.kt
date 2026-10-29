@@ -1,5 +1,6 @@
 package com.depri.day4_tyurin_usatenko
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ListView
@@ -44,6 +45,8 @@ class MainActivity : AppCompatActivity() {
                 "Выбран фильм: ${selectedMovie}",
                 Toast.LENGTH_SHORT
             ).show()
+            val intent = Intent(this, DetailActivity::class.java)
+            startActivity(intent)
         }
     }
 }
