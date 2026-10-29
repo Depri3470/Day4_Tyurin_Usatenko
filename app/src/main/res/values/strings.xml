@@ -3,4 +3,5 @@
     <string name="my_films">Мой список фильмов</string>
     <string name="film_name">Название фильма</string>
     <string name="film_description">Описание фильма</string>
+    <string name="back">Назад</string>
 </resources>

@@ -25,10 +25,18 @@ class MainActivity : AppCompatActivity() {
         val movies = listOf(
             "Начало",
             "Бегущий по лезвию 2049",
-            "Матрицы",
+            "Матрица",
             "Оно",
             "Время",
             "Драйв"
+        )
+        val movieDescription = mapOf(
+            "Начало" to "Фильм о воре, который крадёт секреты из подсознания во время сна.",
+            "Бегущий по лезвию 2049" to "К раскрывает давнюю тайну, которая может разрушить границу между людьми и репликантами и поставить под угрозу общество.",
+            "Матрица" to "Хакер узнаёт шокирующую правду о реальности",
+            "Оно" to "Группа подростков противостоит древнему злу в облике клоуна Пеннивайза.",
+            "Время" to "Мужчина ищет способ спасти дочь, пока трудовые часы заменяют деньги, а время становится главной валютой.",
+            "Драйв" to "Безымянный водитель-каскадёр по ночам работает на грабителей, но случайная доброта к соседке втягивает его в смертельную игру с мафией."
         )
         val adapter = ArrayAdapter(
             this,
@@ -40,12 +48,9 @@ class MainActivity : AppCompatActivity() {
 
         listView.setOnItemClickListener{ parent, view, position, id ->
             val selectedMovie = movies[position]
-            Toast.makeText(
-                this,
-                "Выбран фильм: ${selectedMovie}",
-                Toast.LENGTH_SHORT
-            ).show()
             val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra("movie_name", selectedMovie)
+            intent.putExtra("movie_description", movieDescription[selectedMovie])
             startActivity(intent)
         }
     }

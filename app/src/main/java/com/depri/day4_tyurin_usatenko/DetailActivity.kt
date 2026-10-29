@@ -1,6 +1,8 @@
 package com.depri.day4_tyurin_usatenko
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,6 +17,18 @@ class DetailActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        val movieName = intent.getStringExtra("movie_name") ?: "Неизвестный фильм"
+        val movieDescription = intent.getStringExtra("movie_description")
+        val tvTitle = findViewById<TextView>(R.id.tvMovieTitle)
+        val tvDescription = findViewById<TextView>(R.id.tvMovieDescription)
+        val btnBack = findViewById<Button>(R.id.btnBack)
+
+        tvTitle.text = movieName
+        tvDescription.text = movieDescription
+
+        btnBack.setOnClickListener {
+            finish()
         }
     }
 }
