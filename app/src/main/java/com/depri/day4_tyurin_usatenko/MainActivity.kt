@@ -3,6 +3,7 @@ package com.depri.day4_tyurin_usatenko
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -35,5 +36,14 @@ class MainActivity : AppCompatActivity() {
         )
 
         listView.adapter = adapter
+
+        listView.setOnItemClickListener{ parent, view, position, id ->
+            val selectedMovie = movies[position]
+            Toast.makeText(
+                this,
+                "Выбран фильм: ${selectedMovie}",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 }
