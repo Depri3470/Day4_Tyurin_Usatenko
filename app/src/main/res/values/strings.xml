@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Day4_Tyurin_Usatenko</string>
     <string name="my_films">Мой список фильмов</string>
+    <string name="film_name">Название фильма</string>
+    <string name="film_description">Описание фильма</string>
 </resources>
